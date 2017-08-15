@@ -10,7 +10,7 @@
   </title>
   <meta name="description" content="Praveen Kasarla portfolio">
   <!-- base url -->
-  <base href="/portfolio/">
+  <base href="/Angular4/dist/">
   
     <!-- Configured Head Tags  -->
     <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
@@ -30,7 +30,7 @@
               <!-- CSS will be injected by webpack here -->
               <!-- Preload link tags will be injected by webpack here -->
 
-<link href="main.07aa26c6fcbc5640bb2ed88d85fd66f6.css" rel="stylesheet"><link rel="preload" href="polyfills.70697a8009ff83e26995.bundle.js" as="script"/><link rel="preload" href="main.35cec877fe082929bf9b.bundle.js" as="script"/></head>
+<link href="main.07aa26c6fcbc5640bb2ed88d85fd66f6.css" rel="stylesheet"><link rel="preload" href="polyfills.70697a8009ff83e26995.bundle.js" as="script"/><link rel="preload" href="main.f34b5bd99b1a2b7d1733.bundle.js" as="script"/></head>
 
 <body>
   <app></app>
@@ -176,7 +176,7 @@
 				//container = document.createElement( 'div' );
 				//homeDom.appendChild( container );
 				cameraHome = new THREE.PerspectiveCamera( 35, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 5000 );
-				cameraHome.position.z = 1500;
+				cameraHome.position.z = 2000;
 				sceneHome1 = new THREE.Scene();
 				sceneHome1.fog = new THREE.Fog( 0x000000, 1500, 4000 );
 				scene2 = new THREE.Scene();
@@ -219,15 +219,15 @@
 					addPainting( sceneHome1, mesh );
 					addPainting( scene2, mesh2 );
 					function addPainting( zscene, zmesh ) {
-						zmesh.scale.x = image.width / 100;
-						zmesh.scale.y = image.height / 100;
+						zmesh.scale.x = image.width / 50;
+						zmesh.scale.y = image.height / 50;
 						zscene.add( zmesh );
-						var meshFrame = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: 0x000000 } ) );
+						var meshFrame = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial() );
 						meshFrame.position.z = - 10.0;
 						meshFrame.scale.x = 1.1 * image.width / 100;
 						meshFrame.scale.y = 1.1 * image.height / 100;
 						zscene.add( meshFrame );
-						var meshShadow = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: 0x000000, opacity: 0.75, transparent: true } ) );
+						var meshShadow = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial() );
 						meshShadow.position.y = - 1.1 * image.height/2;
 						meshShadow.position.z = - 1.1 * image.height/2;
 						meshShadow.rotation.x = - Math.PI / 2;
@@ -238,12 +238,12 @@
 						meshCanvas.position.y = meshCanvas2.position.y = floorHeight;
 					}
 				};
-				var texturePainting = new THREE.TextureLoader().load( "assets/img/758px-Canestra_di_frutta_(Caravaggio).jpg", callbackPainting );
+				var texturePainting = new THREE.TextureLoader().load( "assets/img/homeTest2.png", callbackPainting );
 				var texturePainting2 = new THREE.Texture();
 				var materialPainting = new THREE.MeshBasicMaterial( { map: texturePainting } );
 				var materialPainting2 = new THREE.MeshBasicMaterial( {map: texturePainting2 } );
-				texturePainting2.minFilter = texturePainting2.magFilter = THREE.NearestFilter;
-				texturePainting.minFilter = texturePainting.magFilter = THREE.LinearFilter;
+			//	texturePainting2.minFilter = texturePainting2.magFilter = THREE.NearestFilter;
+			//	texturePainting.minFilter = texturePainting.magFilter = THREE.LinearFilter;
 		    //texturePainting.mapping = THREE.UVMapping;
 				rendererHome = new THREE.WebGLRenderer( { antialias: true } );
 				rendererHome.setClearColor( sceneHome1.fog.color );
@@ -275,6 +275,6 @@
 				rendererHome.render( scene2, cameraHome );
 			}
   </script>
-<script type="text/javascript" src="polyfills.70697a8009ff83e26995.bundle.js"></script><script type="text/javascript" src="main.35cec877fe082929bf9b.bundle.js" async></script></body>
+<script type="text/javascript" src="polyfills.70697a8009ff83e26995.bundle.js"></script><script type="text/javascript" src="main.f34b5bd99b1a2b7d1733.bundle.js" async></script></body>
 
 </html>
